@@ -1,4 +1,19 @@
 
+
+
+-  The ROW_NUMBER() is a window function that assigns a sequential integer to each row within the partition of a result set. The row number starts with 1 for the first row in each partition.
+
+- The DENSE_RANK() is a window function that assigns a rank to each row within a partition of a result set. Unlike the RANK() function, the DENSE_RANK() function returns consecutive rank values. Rows in each partition receive the same ranks if they have the same values.
+
+- The RANK() function is a window function that assigns a rank to each row within a partition of a result set.
+The rows within a partition that have the same values will receive the same rank. The rank of the first row within a partition is one. The RANK() function adds the number of tied rows to the tied rank to calculate the rank of the next row, therefore, the ranks may not be consecutive.
+
+---
+
+
+
+
+
 **Schema (MySQL v8.0)**
 
     
@@ -34,9 +49,7 @@
     insert into employee values(123, 'Vikram', 'IT', 8000);
     insert into employee values(124, 'Dheeraj', 'IT', 11000);
     
-    
 
----
 
 **Query #1**
 
